@@ -52,3 +52,33 @@ p, ul > li {
     text-decoration: none;
     font-size: 15px;
 }
+
+/* Modal Styles */
+.modal-open .modal {
+    background-color: #00BFC5;
+}
+
+.modal-dialog {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.modal-content {
+    background-color: #00BFC5;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    color: #FFFFFF;
+}
+
+.modal-header {
+    border: none;
+}
+
+.modal-header > .close {
+    color: #FFFFFF;
+    opacity: 1;
+}
