@@ -4,5 +4,8 @@ res/
 #Bower Resource Files
 1.Landing_Page/bower_components/
 
-#Junk files
+#IntelliJ IDE Files
+1.Landing_Page/.idea/
+
+#Junk Files
 .DS_Store
