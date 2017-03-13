@@ -1,9 +1,6 @@
 #Base Resource Files
 res/
 
-#Bower Resource Files
-1.Landing_Page/bower_components/
-
 #IntelliJ IDE Files
 1.Landing_Page/.idea/
 
