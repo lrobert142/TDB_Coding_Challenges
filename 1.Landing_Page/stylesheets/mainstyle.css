@@ -42,7 +42,7 @@ p, ul > li {
     margin: 0;
 }
 
-.quote-button {
+.quote-button, .modal-quote-button {
     color: #FFFFFF;
     background-color: #F04D52;
     border: thin solid #F04D52;
@@ -52,8 +52,9 @@ p, ul > li {
     text-decoration: none;
     font-size: 15px;
 }
-
+/*****************/
 /* Modal Styles */
+/****************/
 .modal-open .modal {
     background-color: #00BFC5;
 }
@@ -81,4 +82,32 @@ p, ul > li {
 .modal-header > .close {
     color: #FFFFFF;
     opacity: 1;
+}
+
+.modal-logo {
+    display: block;
+    margin: 0 auto;
+}
+
+.modal-instructions {
+    color: #FFFFFF;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.modal-input {
+    color: #A7A9AC;
+    border: thin solid #FFFFFF;
+    box-shadow: none;
+    border-radius: 7px;
+    margin: 10px 0;
+}
+
+.first-modal-input {
+    margin-top: 30px;
+}
+
+.modal-quote-button {
+    display: block;
+    margin: 20px auto 0 auto;
 }
