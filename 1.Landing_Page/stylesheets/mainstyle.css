@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-    background-image: url("images/background.png");
+    background-image: url("../images/background.png");
     font-family: Lato;
 }
 
@@ -42,16 +42,13 @@ p, ul > li {
     margin: 0;
 }
 
-.quote-button-container {
-    margin-top: 20px;
-}
-
 .quote-button {
     color: #FFFFFF;
     background-color: #F04D52;
     border: thin solid #F04D52;
     border-radius: 8px;
-    padding: 12px 35px;
+    padding: 10px 35px;
+    margin-top: 20px;
     text-decoration: none;
     font-size: 15px;
 }
