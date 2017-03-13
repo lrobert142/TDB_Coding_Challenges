@@ -69,11 +69,15 @@
                          alt="Daniel Owen Painting and Decorating White Logo"/>
                     <p class="modal-instructions">Fill in your details using the form below and we'll get back to you to
                         discuss your job in more detail.</p>
-                    <form action="#" method="POST">
-                        <input type="text" class="form-control modal-input first-modal-input" placeholder="Full Name" required/>
-                        <input type="email" class="form-control modal-input" placeholder="Email Address" required/>
-                        <input type="text" class="form-control modal-input" placeholder="Phone Number" required/>
-                        <textarea class="form-control modal-input" rows="3"
+                    <form action="https://script.google.com/macros/s/AKfycbzDASioBtMT_RQtoFAvnadfUTb1nj2qnwTIZLHYlJ4VKxs_GnKU/exec"
+                          method="POST">
+                        <input id="name" name="name" type="text" class="form-control modal-input first-modal-input"
+                               placeholder="Full Name" required/>
+                        <input id="email" name="email" type="email" class="form-control modal-input" placeholder="Email Address"
+                               required/>
+                        <input id="phone" name="phone" type="text" class="form-control modal-input" placeholder="Phone Number"
+                               required/>
+                        <textarea id="comment" name="comment" class="form-control modal-input" rows="3"
                                   placeholder="Please explain what you are after..." required></textarea>
                         <button type="submit" class="btn btn-primary modal-quote-button">Request A Quote</button>
                     </form>
