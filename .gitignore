@@ -1,0 +1,5 @@
+#Base resource files
+res/
+
+#Junk files
+.DS_Store
