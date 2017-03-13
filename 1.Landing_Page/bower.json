@@ -1,0 +1,18 @@
+{
+  "name": "TBDDesign_Landing_Page_Challenge",
+  "homepage": "https://github.com/lrobert142/TDB_Coding_Challenges",
+  "authors": [
+    "Lachlan Robertson <lachlan.robertson142@gmail.com>"
+  ],
+  "description": "1st Challenge to design a landing page for TBDDesign",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
