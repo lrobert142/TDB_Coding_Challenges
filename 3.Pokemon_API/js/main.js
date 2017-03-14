@@ -14,6 +14,8 @@ PokemonAPI = function () {
                     pokemon.abilityEntries = response.abilities;
                     pokemon.moveEntries = response.moves;
                     resolve(pokemon);
+                }).fail((request, status, error) => {
+                    reject({message: "An unexpected error occurred", status: status, error: error});
                 });
             });
         },
@@ -35,6 +37,8 @@ PokemonAPI = function () {
                                 }
                             }
                             resolve(ability);
+                        }).fail((request, status, error) => {
+                            reject({message: "An unexpected error occurred", status: status, error: error});
                         });
                     });
                 }
@@ -66,6 +70,8 @@ PokemonAPI = function () {
                             move.accuracy = response.accuracy;
                             move.pp = response.pp;
                             resolve(move);
+                        }).fail((request, status, error) => {
+                            reject({message: "An unexpected error occurred", status: status, error: error});
                         });
                     });
                 }
@@ -102,12 +108,21 @@ $(document).ready(function () {
     for (let i = 1; i < 11; i++) {
         let promise = api.getPokemon(i)
             .then(api.getAbilitiesDetails)
-            .then(api.getMovesDetails);
+            .then(api.getMovesDetails)
+            .catch((error) => {
+                console.log("Message:", error.message);
+                console.log("Status:", error.status);
+                console.log("Error:", error.error);
+            });
         promises.push(promise);
     }
 
     Promise.all(promises).then((pokemon) => {
         // We use a promise in case further chaining is needed later
-        let promise = createTemplate(pokemon);
+        let promise = createTemplate(pokemon)
+            .then(() => {
+                console.log("HERE"); //TEMP
+                $('#loading-bar-container').slideUp();
+            });
     });
 });
