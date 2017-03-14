@@ -13,7 +13,6 @@ PokemonAPI = function () {
                     pokemon.weight = response.weight;
                     pokemon.abilityEntries = response.abilities;
                     pokemon.moveEntries = response.moves;
-                    console.log("POKEMON:", pokemon); //TEMP
                     resolve(pokemon);
                 });
             });
@@ -47,7 +46,6 @@ PokemonAPI = function () {
                 });
                 Promise.all(promises).then(abilities => {
                     pokemon.abilities = abilities;
-                    console.log("ABILITIES:", pokemon); //TEMP
                     resolve(pokemon);
                 });
             });
@@ -79,7 +77,6 @@ PokemonAPI = function () {
                 });
                 Promise.all(promises).then(moves => {
                     pokemon.moves = moves;
-                    console.log("MOVES:", pokemon); //TEMP
                     resolve(pokemon);
                 });
             });
@@ -90,14 +87,27 @@ PokemonAPI = function () {
 };
 
 $(document).ready(function () {
-    let api = new PokemonAPI();
-    let pokemon = api.getPokemon(1)
-        .then(api.getAbilitiesDetails)
-        .then(api.getMovesDetails)
-        .then((pokemon, error) => {
+    function createTemplate(pokemon) {
+        return new Promise((resolve, reject) => {
             let source = $("#template-pokemon").html();
             let template = Handlebars.compile(source);
             let html = template(pokemon);
-            $('#container').append(html);
+            $('#pokemon-container').append(html);
+            resolve(html);
         });
+    }
+
+    let api = new PokemonAPI();
+    let promises = [];
+    for (let i = 1; i < 11; i++) {
+        let promise = api.getPokemon(i)
+            .then(api.getAbilitiesDetails)
+            .then(api.getMovesDetails);
+        promises.push(promise);
+    }
+
+    Promise.all(promises).then((pokemon) => {
+        // We use a promise in case further chaining is needed later
+        let promise = createTemplate(pokemon);
+    });
 });
