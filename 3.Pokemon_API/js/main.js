@@ -95,11 +95,15 @@ PokemonAPI = function () {
 $(document).ready(function () {
     function createTemplate(pokemon) {
         return new Promise((resolve, reject) => {
-            let source = $("#template-pokemon").html();
-            let template = Handlebars.compile(source);
-            let html = template(pokemon);
-            $('#pokemon-container').append(html);
-            resolve(html);
+            if (pokemon.indexOf(undefined) !== -1) {
+                reject({message: "An unexpected error occurred. Please try again later."})
+            } else {
+                let source = $("#template-pokemon").html();
+                let template = Handlebars.compile(source);
+                let html = template(pokemon);
+                $('#pokemon-container').append(html);
+                resolve(html);
+            }
         });
     }
 
@@ -113,6 +117,9 @@ $(document).ready(function () {
                 console.log("Message:", error.message);
                 console.log("Status:", error.status);
                 console.log("Error:", error.error);
+                $('#loading-bar-container').hide();
+                $('#error-message').append("ERROR retrieving pokemon #" + i + ": Could not retrieve pokemon data, the maximum number of requests has been exceeded.<br>")
+                $('#error-message-container').show();
             });
         promises.push(promise);
     }
@@ -121,7 +128,6 @@ $(document).ready(function () {
         // We use a promise in case further chaining is needed later
         let promise = createTemplate(pokemon)
             .then(() => {
-                console.log("HERE"); //TEMP
                 $('#loading-bar-container').slideUp();
             });
     });

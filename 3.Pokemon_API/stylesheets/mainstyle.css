@@ -13,3 +13,16 @@
 .panel h1 {
     text-align: center;
 }
+
+.error {
+    font-weight: bold;
+    color: #FF0000;
+    text-align: center;
+}
+
+#error-message-container {
+    display: none;
+    border: thin solid #F04D52;
+    border-radius: 10px;
+    padding: 20px;
+}
