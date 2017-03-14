@@ -1,4 +1,4 @@
-# TDB_Coding_Challenges
+# TBD_Coding_Challenges
 Coding Challenges set by TBD Design
 ---
 1) I have attached a ZIP file containing a PSD for a basic landing page. If you open the file, you’ll see everything has been named and grouped in to the relevant folders. The top layer includes a folder titled ‘Modal’ for the pop up email form. You’re required to convert this file to a working responsive front-end that has an email form (bonus if the submissions can be stored somewhere). *Please supply working & compiled files*
