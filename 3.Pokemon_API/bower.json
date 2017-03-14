@@ -1,0 +1,21 @@
+{
+  "name": "tbd-design-pokemon-api",
+  "homepage": "https://github.com/lrobert142/TDB_Coding_Challenges",
+  "authors": [
+    "Lachlan Robertson <lachlan.robertson142@gmail.com>"
+  ],
+  "description": "3rd Challenge to utilise the Pokemon API and bootstrap to display details",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
