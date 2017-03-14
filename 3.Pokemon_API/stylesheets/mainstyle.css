@@ -1,0 +1,15 @@
+.left-panel-title, .second-left-panel-title {
+    float: left;
+}
+
+.second-left-panel-title {
+    margin-left: 20px;
+}
+
+.right-panel-title {
+    text-align: right;
+}
+
+.panel h1 {
+    text-align: center;
+}
